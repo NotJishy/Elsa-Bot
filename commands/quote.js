@@ -54,7 +54,7 @@ exports.run = function (Discord, msg, args) {
 
               const embed = new Discord.MessageEmbed()
                 .setAuthor(character.charAt(0).toUpperCase() + character.substring(1), charProfile.icon)
-                .setTitle(quote.text)
+                .setTitle(`"${quote.text}"`)
                 .setFooter(quote.origin)
                 .setColor(charProfile.color)
               msg.channel.send(embed)
