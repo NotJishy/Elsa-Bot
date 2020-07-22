@@ -1,8 +1,9 @@
 exports.run = function (Discord, msg, args) {
   const fs = require('fs')
+  const profiles = require('../assets/quotes/char-profiles.json')
 
   var character
-  fs.readdir('./assets/quotes', { encoding: 'utf8' }, function (err, chars) {
+  fs.readdir('./assets/quotes/characters', { encoding: 'utf8' }, function (err, chars) {
     if (err) {
       console.log(new Date() + ` - ${err}`)
     } else {
@@ -20,22 +21,42 @@ exports.run = function (Discord, msg, args) {
         character = chars[Math.floor(Math.random() * chars.length)]
       }
 
-      fs.readdir(`./assets/quotes/${character}`, { encoding: 'utf8' }, function (err, dataa) {
+      fs.readdir(`./assets/quotes/characters/${character}`, { encoding: 'utf8' }, function (err, dataa) {
         if (err) {
           return console.log(new Date() + ` - ${err}`)
         } else {
           let quote = dataa[Math.floor(Math.random() * dataa.length)]
 
-          quote = fs.readFile(`./assets/quotes/${character}/${quote}`, { encoding: 'utf8' }, function (err, datab) {
+          quote = fs.readFile(`./assets/quotes/characters/${character}/${quote}`, { encoding: 'utf8' }, function (err, datab) {
             if (err) {
               console.log(new Date() + ` - ${err}`)
             } else {
               quote = JSON.parse(datab)
 
+              var charProfile
+              switch (character) {
+                case 'elsa':
+                  charProfile = profiles.elsa
+                  break;
+                case 'anna':
+                  charProfile = profiles.anna
+                  break;
+                case 'kristoff':
+                  charProfile = profiles.kristoff
+                  break;
+                case 'olaf':
+                  charProfile = profiles.olaf
+                  break;
+                case 'pabbie':
+                  charProfile = profiles.pabbie
+                  break;
+              }
+
               const embed = new Discord.MessageEmbed()
-                .setAuthor(character.charAt(0).toUpperCase() + character.substring(1), "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fscratchpad%2Fimages%2F2%2F24%2FElsa_OFA.jpg%2Frevision%2Flatest%3Fcb%3D20180227094540&f=1&nofb=1")
+                .setAuthor(character.charAt(0).toUpperCase() + character.substring(1), charProfile.icon)
                 .setTitle(quote.text)
                 .setFooter(quote.origin)
+                .setColor(charProfile.color)
               msg.channel.send(embed)
             }
           })

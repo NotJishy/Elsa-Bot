@@ -1,0 +1,22 @@
+{
+  "elsa": {
+    "color": "#40ccf6",
+    "icon": "https://i.imgur.com/CWs8Rim.png"
+  },
+  "anna": {
+    "color": "#19bf00",
+    "icon": "https://i.imgur.com/VvVJno3.png"
+  },
+  "kristoff": {
+    "color": "",
+    "icon": ""
+  },
+  "olaf": {
+    "color": "",
+    "icon": ""
+  },
+  "pabbie": {
+    "color": "",
+    "icon": ""
+  }
+}
