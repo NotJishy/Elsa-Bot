@@ -1,3 +1,5 @@
 module.exports = {
-  quote: require('./commands/quote')
+  help: require('./help'),
+  quote: require('./commands/MISC/quote'),
+  hug: require('./commands/FUN/hug')
 }

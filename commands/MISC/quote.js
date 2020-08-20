@@ -65,3 +65,8 @@ exports.run = function (Discord, msg, args) {
     }
   })
 }
+
+
+exports.name = "Quotes"
+exports.command = "quote [character]"
+exports.description = "Get a random quote from your favorite Frozen character!"

@@ -30,8 +30,14 @@ client.on('message', (msg) => {
   if (msg.content.indexOf(prefix) !== 0) { return }
 
   switch (cmd) {
+    case 'help':
+        commands.help.get(Discord, msg, client, prefix, args)
+      break;
     case 'quote':
       commands.quote.run(Discord, msg, args)
+      break;
+    case 'hug':
+      commands.hug.run(Discord, msg, args)
       break;
   }
 })
