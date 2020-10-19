@@ -45,6 +45,8 @@ client.on('message', (msg) => {
     case 'hug':
       commands.hug.run(Discord, msg, args)
       break;
+    case 'snowball':
+      commands.snowball.run(Discord, msg)
   }
 })
 
