@@ -9,7 +9,7 @@ const responses = require('./responses')
 client.once('ready', async () => {
   console.log(new Date() + ' - Elsa is now awake.')
 
-  client.user.setPresence({ activity: { name: 'Frozen 2', type: 'WATCHING' } })
+  client.user.setPresence({ activity: { name: 'Once Upon A Snowman', type: 'WATCHING' } })
 })
 
 // Bot joins guild

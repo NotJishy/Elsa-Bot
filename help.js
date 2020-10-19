@@ -13,7 +13,7 @@ exports.get = function (Discord, msg, client, prefix, args) {
     const embed = new Discord.MessageEmbed()
       .setAuthor(client.user.username, client.user.avatarURL())
       .setTitle(cat)
-      .setColor('AQUA')
+      .setColor("RANDOM")
 
       dir = fs.readdirSync(`./commands/${cat}`)
 
@@ -27,7 +27,7 @@ exports.get = function (Discord, msg, client, prefix, args) {
     const embed = new Discord.MessageEmbed()
       .setAuthor(client.user.username, client.user.avatarURL())
       .setTitle('Categories')
-      .setColor('AQUA')
+      .setColor("RANDOM")
 
     for (i = 0; i < dir.length; i++) {
       embed.addField(`***${dir[i]}***`, `\`${prefix}help ${(dir[i]).toString().toLowerCase()}\``, true)
