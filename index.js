@@ -3,6 +3,7 @@ const client = new Discord.Client()
 
 const login = require('./token.json')
 const commands = require('./commands')
+const responses = require('./responses')
 
 // Bot enabled
 client.once('ready', async () => {
@@ -23,6 +24,11 @@ client.on('guildDelete', (guild) => {
 
 // Message seen
 client.on('message', (msg) => {
+
+  if (msg.content.includes(' elsa ')) {
+    responses.elsa.run(Discord, msg)
+  }
+
   const prefix = 'e!'
   const args = msg.content.slice(prefix.length).trim().split(/ +/g)
   const cmd = args.shift().toLowerCase()
