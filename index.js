@@ -29,6 +29,11 @@ client.on('message', (msg) => {
     responses.elsa.run(Discord, msg)
   }
 
+  if (msg.mentions.has(client.user)) {
+    const attachment = new Discord.MessageAttachment(`./assets/anna/knock.gif`)
+    msg.channel.send(attachment)
+  }
+
   const prefix = 'e!'
   const args = msg.content.slice(prefix.length).trim().split(/ +/g)
   const cmd = args.shift().toLowerCase()
