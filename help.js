@@ -19,7 +19,7 @@ exports.get = function (Discord, msg, client, prefix, args) {
 
       for (i = 0; i < dir.length; i++) {
         var cmd = require(`./commands/${cat}/${dir[i]}`)
-        embed.addField(`***${cmd.name}***`, `\`${prefix}${cmd.command}\``, true)
+        embed.addField(`${(cmd.command).toUpperCase()}`, `\`${cmd.description}\``, true)
       }
 
       msg.channel.send(embed)
