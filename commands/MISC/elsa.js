@@ -7,7 +7,7 @@ exports.run = function(Discord, msg) {
     } else {
       let file = data[Math.floor(Math.random() * data.length)]
 
-      const attachment = new Discord.MessageAttachment(`./assets/elsa/${file}`)
+      const attachment = new Discord.MessageAttachment(`./assets/images/elsa/${file}`)
 
       msg.channel.send(attachment)
     }
