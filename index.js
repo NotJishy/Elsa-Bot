@@ -50,6 +50,9 @@ client.on('message', (msg) => {
       break;
     case 'elsa':
       commands.elsa.run(Discord, msg)
+      break;
+    case 'anna':
+      commands.anna.run(Discord, msg)
   }
 })
 
