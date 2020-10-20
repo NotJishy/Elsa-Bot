@@ -25,10 +25,6 @@ client.on('guildDelete', (guild) => {
 // Message seen
 client.on('message', (msg) => {
 
-  if (msg.content.includes(' elsa ')) {
-    responses.elsa.run(Discord, msg)
-  }
-
   if (msg.mentions.has(client.user)) {
     const attachment = new Discord.MessageAttachment(`./assets/anna/knock.gif`)
     msg.channel.send(attachment)
@@ -52,6 +48,9 @@ client.on('message', (msg) => {
       break;
     case 'snowball':
       commands.snowball.run(Discord, msg)
+      break;
+    case 'elsa':
+      commands.elsa.run(Discord, msg)
   }
 })
 
