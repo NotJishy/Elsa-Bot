@@ -9,7 +9,12 @@ exports.run = function(Discord, msg) {
 
       const attachment = new Discord.MessageAttachment(`./assets/images/anna/${file}`)
 
-      msg.channel.send(attachment)
+      const embed = new Discord.MessageEmbed()
+        .attachFiles(attachment)
+        .setImage(`attachment://${file}`)
+        .setColor('#19bf00')
+
+      msg.channel.send(embed)
     }
   })
 }
