@@ -13,5 +13,5 @@ exports.run = function(Discord, msg) {
 }
 
 exports.name = "Snowball"
-exports.command = "snowball [user]"
+exports.command = "snowball <user>"
 exports.description = "Throw a snowball at a friend!"
