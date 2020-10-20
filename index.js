@@ -3,7 +3,6 @@ const client = new Discord.Client()
 
 const login = require('./token.json')
 const commands = require('./commands')
-const responses = require('./responses')
 
 // Bot enabled
 client.once('ready', async () => {
