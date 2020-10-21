@@ -25,7 +25,7 @@ client.on('guildDelete', (guild) => {
 client.on('message', (msg) => {
 
   if (msg.mentions.has(client.user)) {
-    const attachment = new Discord.MessageAttachment(`./assets/anna/knock.gif`)
+    const attachment = new Discord.MessageAttachment(`./assets/images/anna/knock.gif`)
     msg.channel.send(attachment)
   }
 
