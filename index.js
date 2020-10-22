@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 
 const login = require('./token.json')
+const package = require('./package.json')
 const commands = require('./commands')
 
 // Bot enabled
@@ -38,6 +39,9 @@ client.on('message', (msg) => {
   switch (cmd) {
     case 'help':
         commands.help.get(Discord, msg, client, prefix, args)
+      break;
+    case 'botinfo':
+        commands.botinfo.run(Discord, client, msg, package)
       break;
     case 'quote':
       commands.quote.run(Discord, msg, args)
