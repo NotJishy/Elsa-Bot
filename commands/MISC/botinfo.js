@@ -44,7 +44,7 @@ function addSecsToUptime(Discord, client, msg, package, secs, uptimeResponse) {
 function sendEmbed(Discord, client, msg, package, uptimeResponse) {
   const embed = new Discord.MessageEmbed()
     .setTitle('Elsa-Bot Information')
-    .setDescription('Here is some information about, and the current status of, Elsa-Bot!')
+    .setDescription('Here is some information about, and the current status of, Elsa-Bot! \n\n View the source code here: https://github.com/NotJishy/Elsa-Bot')
     .setThumbnail(client.user.avatarURL())
     .addField(`🖥️ Version`, `v${package.version}`, true)
     .addField(`🌐 Ping`, `${Math.round(client.ws.ping)}ms`, true)
