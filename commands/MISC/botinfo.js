@@ -11,6 +11,7 @@ exports.run = async(Discord, client, msg, package) => {
   var uptimeResponse = ``
 
   if (days != 0) {
+    hours = hours - (24 * days)
     addDaysToUptime(Discord, client, msg, package, days, hours, mins, secs, uptimeResponse)
   } else if (hours != 0) {
     addHoursToUptime(Discord, client, msg, package, hours, mins, secs, uptimeResponse)
