@@ -14,12 +14,24 @@ client.once('ready', async () => {
 
 // Bot joins guild
 client.on('guildCreate', (guild) => {
-  console.log(new Date() + ` - Joined guild: ${guild.name} - ${guild.id}`)
+  console.log('----------------------------------------------------------------- \n\n' +
+              '                     NEW GUILD JOINED                              \n' +
+              `Guild Name: ${guild.name}\n` +
+              `Guild ID: ${guild.id}\n\n` +
+              `Total Guilds: ${client.guilds.cache.size}\n` +
+              `${new Date()}\n\n` +
+              '-----------------------------------------------------------------')
 })
 
 // Bot leaves guild
 client.on('guildDelete', (guild) => {
-  console.log(new Date() + ` - Left guild: ${guild.name} - ${guild.id}`)
+  console.log('----------------------------------------------------------------- \n\n' +
+              '                        GUILD REMOVED                             \n' +
+              `Guild Name: ${guild.name}\n` +
+              `Guild ID: ${guild.id}\n\n` +
+              `Total Guilds: ${client.guilds.cache.size}\n` +
+              `${new Date()}\n\n` +
+              '-----------------------------------------------------------------')
 })
 
 // Message seen
