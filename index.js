@@ -57,6 +57,9 @@ client.on('message', (msg) => {
       break;
     case 'anna':
       commands.anna.run(Discord, msg)
+      break;
+    case 'olaf':
+      commands.olaf.run(Discord, msg)
   }
 })
 
