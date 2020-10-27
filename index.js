@@ -7,7 +7,11 @@ const commands = require('./commands')
 
 // Bot enabled
 client.once('ready', async () => {
-  console.log(new Date() + ' - Elsa is now awake.')
+  console.log('-----------------------------------------------------------------\n\n' +
+              'Elsa-Bot is now online!\n' +
+              `Total Guilds: ${client.guilds.cache.size}\n` +
+              new Date() + '\n\n' +
+              '-----------------------------------------------------------------')
 
   client.user.setPresence({ activity: { name: 'Once Upon A Snowman', type: 'WATCHING' } })
 })
