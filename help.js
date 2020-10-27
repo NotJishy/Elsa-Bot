@@ -19,7 +19,13 @@ exports.get = function (Discord, msg, client, prefix, args) {
 
       for (i = 0; i < dir.length; i++) {
         var cmd = require(`./commands/${cat}/${dir[i]}`)
-        embed.addField(`${(cmd.command).toUpperCase()}`, `\`${cmd.description}\``, true)
+
+        if (cat == 'IMAGES') {
+          let imagesDir = fs.readdirSync(`./assets/images/${(dir[i]).replace('.js', '')}`)
+          embed.addField(`${(cmd.command).toUpperCase()}`, `\`${(cmd.description).replace('{count}', `${imagesDir.length}`)}\``, true)
+        } else {
+          embed.addField(`${(cmd.command).toUpperCase()}`, `\`${cmd.description}\``, true)
+        }
       }
 
       msg.channel.send(embed)

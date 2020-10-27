@@ -21,4 +21,4 @@ exports.run = function(Discord, msg) {
 
 exports.name = "Elsa"
 exports.command = "elsa"
-exports.description = "Get a random picture or GIF of Elsa!"
+exports.description = "{count} images & GIFs!"
