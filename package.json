@@ -1,6 +1,6 @@
 {
     "name": "Elsa Bot",
-    "version": "1.0",
+    "version": "BETA",
     "description": "A Discord bot themed around the character Elsa and Disney's Frozen franchise!",
     "main": "index.js",
     "scripts": {
