@@ -68,14 +68,8 @@ client.on('message', (msg) => {
     case 'snowball':
       commands.snowball.run(Discord, msg)
       break;
-    case 'elsa':
-      commands.elsa.run(Discord, msg)
-      break;
-    case 'anna':
-      commands.anna.run(Discord, msg)
-      break;
-    case 'olaf':
-      commands.olaf.run(Discord, msg)
+    case 'image':
+      commands.image.run(Discord, msg, args, prefix)
   }
 })
 
