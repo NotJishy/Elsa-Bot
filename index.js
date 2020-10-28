@@ -63,7 +63,7 @@ client.on('message', (msg) => {
       commands.quote.run(Discord, msg, args)
       break;
     case 'hug':
-      commands.hug.run(Discord, msg, args)
+      commands.hug.run(Discord, msg)
       break;
     case 'snowball':
       commands.snowball.run(Discord, msg)
