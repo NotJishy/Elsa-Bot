@@ -41,14 +41,18 @@ client.on('guildDelete', (guild) => {
 // Message seen
 client.on('message', (msg) => {
 
-  if (msg.mentions.has(client.user)) {
-    const attachment = new Discord.MessageAttachment(`./assets/images/anna/knock.gif`)
-    msg.channel.send(attachment)
-  }
-
   const prefix = 'e!'
   const args = msg.content.slice(prefix.length).trim().split(/ +/g)
   const cmd = args.shift().toLowerCase()
+
+  if (msg.mentions.has(client.user)) {
+
+    if ((msg.content.includes("@everyone") || msg.content.includes("@here")) != true) {
+      const attachment = new Discord.MessageAttachment(`./assets/images/anna/knock.gif`)
+      msg.channel.send(attachment)
+    }
+
+  }
 
   if (msg.content.indexOf(prefix) !== 0) { return }
 
