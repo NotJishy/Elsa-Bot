@@ -41,6 +41,8 @@ client.on('guildDelete', (guild) => {
 // Message seen
 client.on('message', (msg) => {
 
+  msg.content = msg.content.toLowerCase()
+
   const prefix = 'e!'
   const args = msg.content.slice(prefix.length).trim().split(/ +/g)
   const cmd = args.shift().toLowerCase()
