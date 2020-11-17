@@ -35,6 +35,9 @@ exports.run = function(Discord, msg, args, prefix) {
                             break;
                         case 'olaf':
                             embed.setColor('#E1E1E1')
+                            break;
+                        case 'sven':
+                            embed.setColor('#664C39')
                     }
 
                     msg.channel.send(embed)
