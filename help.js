@@ -24,6 +24,9 @@ exports.get = function (Discord, msg, client, prefix, args) {
 
           embed.addField(`${(cmd.command).toUpperCase()}`, `\`${(cmd.description).replace('{count}', `${imagesDir.length}`)}\``, true)
         }
+
+        embed.addField(`Kristoff`, 'COMING SOON!', true)
+        embed.addField(`Honeymaren`, 'COMING SOON!', true)
       } else {
         dir = fs.readdirSync(`./commands/${cat}`, { withFileTypes: true })
 
